@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Rogers Kabuye">
+    <meta name="generator" content="Hugo 0.78.1">
+    <title>Buck</title>
+
+    <script src="https://kit.fontawesome.com/ebcb029ea8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static "mdb/css/mdb.min.css" %}">
+    <link rel="stylesheet" href="{% static "mdb/css/mdb.min.css" %}">
+    <link rel="stylesheet" href="{% static "neumorphism/dist/css/light/neumorph.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "lightbox2-2.11.3/dist/css/lightbox.css" %}">
+    <link rel="stylesheet" href="{% static "fontawesome/css/all.css" %}">
+
+
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }   
+    html, body{
+        height: 100%;
+    }
+
+    .cont{
+        height: 100%;
+        ackground-image: url('{% static "images/mwi.png" %}');
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: cover;
+        background-attachment: fixed;  
+        animation: imm 20s ease-in-out infinite;
+    }
+
+    @keyframes imm{
+        0%, 100%{
+            background-image: url('{% static "images/mwi.png" %}') ;
+        }
+        25%{
+            background-image: url('{% static "images/house.jpg" %}') ;
+        }
+        50%{
+            background-image: url('{% static "images/shoe.jpg" %}') ;
+        }
+        75%{
+            background-image:  url('{% static "images/phone.jpg" %}');
+        }
+    }
+
+    .cont p{
+        text-align: center;
+        color: #F2F3F7;
+        text-transform: uppercase;
+        font-size: 55px;
+        padding: 10px;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    @media only screen and (max-width: 780px){
+        .cont p {
+            font-size: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 680px){
+        .cont p {
+            font-size: 30px;
+        }
+    }
+
+    #s1{
+        opacity: 0;
+        animation:an 3s linear 7s;
+        animation-fill-mode: forwards;
+    }
+
+    #s2{
+        opacity: 0;
+        animation:an 3s linear 2s;
+        animation-fill-mode: forwards;
+    }
+
+    #s3{
+        opacity: 0;
+        animation:an 3s linear 9s;
+        animation-fill-mode: forwards;
+    }
+    #s4{
+        opacity: 0;
+        animation:an 3s linear 4s;
+        animation-fill-mode: forwards;
+    }
+
+    #s5{
+        opacity: 0;
+        animation:an 3s linear 8s;
+        animation-fill-mode: forwards;
+    }
+
+    #s6{
+        opacity: 0;
+        animation:an 3s linear 6s;
+        animation-fill-mode: forwards;
+    }
+
+    #s7{
+        opacity: 0;
+        animation:an 3s linear 1s;
+        animation-fill-mode: forwards;
+    }
+
+    #s8{
+        opacity: 0;
+        animation:an 3s linear 3s;
+        animation-fill-mode: forwards;
+    }
+
+    #s9{
+        opacity: 0;
+        animation:an 3s linear 5s;
+        animation-fill-mode: forwards;
+        animation:annn 3s linear 5s;
+    }
+
+    @keyframes an{
+        0%{
+            opacity: 1%;
+        }
+        100%{
+            opacity: 100%;
+        }
+    }
+
+    @keyframes annn{
+        0%{
+            color: red;
+        }
+        100%{
+            color: white;
+        }
+    }
+
+    p {
+        animation: ani 3s linear 10s 1;
+        animation-fill-mode: forwards;
+    }
+
+    .btn {
+        opacity: 0;
+        animation: anim 3s linear 11s 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes ani{
+
+    }
+
+    @keyframes anim{
+        0%{
+            
+            opacity: 0%;
+        }
+        100%{
+            opacity: 100%;
+        }
+    }
+
+
+</style>
+</head>
+<body>
+    <div class="container-fluid cont">
+        <div class="mask" style="background-color: rgba(1, 0, 0, 0.6);">
+            <p><span id="s1">B</span><span id="s2">u</span><span id="s3">c</span><span id="s4">k</span> <span id="s5">S</span><span id="s6">h</span><span id="s7">o</span><span id="s8">p</span><span id="s9">s</span></p>
+        </div>
+    <a><p class="text-center mt-4">
+        <a href="{% url "Home" %}"><button class="btn btn-white shadow-lg" type="button">
+          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          press to go
+        </button></a>
+    </p></a>
+    </div>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="{% static "masonry/masonry.pkgd.min.js" %}"></script>
+<script type="text/javascript" src="{% static "lightbox2-2.11.3/dist/js/lightbox-plus-jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "mdb/js/mdb.min.js" %}"></script>
+</body>
+</html>

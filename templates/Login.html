@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Rogers Kabuye">
+    <meta name="generator" content="Hugo 0.78.1">
+    <title>Buck</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Khand:wght@500&family=Lusitana&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/ebcb029ea8.js" crossorigin="anonymous"></script>
+
+    <!--This is mdb bootstrap5-->
+    <link rel="stylesheet" href="{% static "mdb/css/mdb.min.css" %}">
+    <link rel="stylesheet" href="{% static "neumorphism/dist/css/light/neumorph.min.css" %}">
+    <link rel="stylesheet" href="{% static "fontawesome/css/all.css" %}">
+
+    
+    <style type="text/css">
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url("{% static "vsgs/loggo.svg" %}");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+body {
+  padding-top: px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  margin-top: 400px;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#sig {
+  margin-top: 40px;
+}
+
+    div {
+      font-family: 'Lusitana', serif;
+    }
+
+
+    </style>
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    #navgettor {
+      background-image: linear-gradient(to right, #343a40, #343a40);
+      border-radius: 0;
+    }
+    #loin:hover {
+      background-color: #f93154;
+    }
+    #toogler{
+      background-color: #f93154;
+      color: white;
+    }
+    #mysign{
+      background-color:#F5F5F5;
+      margin: 0;
+    }
+    </style>
+
+    
+  
+  </head>
+  <body class="text-center">
+<header>
+      <div class="container-fluid" style="padding: 0; margin: 0; text-align: left;">
+      <nav id="navgettor" class="navbar navbar-expand-lg np-element sticky-top np-bg-background fixed-top">
+          <div class="container">
+          <a class="navbar-brand " data-lightbox="my-gallery" data-title="My caption" href="{% static "vsgs/loggo.svg" %}"><h3 class="">
+          <span style="height: 10px;"><img src="{% static "vsgs/newmylogo.svg" %}" class="img-fluid" style="height: 42px;"></span>
+          </h3></a>
+          <button id="toogler" class="navbar-toggler np-bg-danger" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse np-bg-background text-black justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item np-list-item"><a class="nav-link text-light" href="{% url "Home" %}"><i class="fas fa-home fa-1x"></i> Home</a></li>
+              <li class="nav-item np-list-item"><a class="nav-link text-light" href="{% url "Buck" %}"><i class="fas fa-balance-scale fa-1x"></i> Main</a></li>
+              <li class="nav-item np-list-item"><a class="nav-link text-light" href="{% url "Intro" %}"><i class="fas fa-door-open fa-1x"></i> Intro</a></li>
+              <li class="nav-item"><a class="nav-link text-light" href="{% url "Contacts" %}"><i class="fas fa-hand-point-down fa-1x"></i> About</a></li>
+              <li class="nav-item"><a class="nav-link text-light" href="{% url "Upload" %}"><i class="fas fa-upload fa-1x"></i> Upload</a></li>
+              <li class="nav-item"><a class="nav-link text-light btn btn-danger" href="{% url "Sign" %}"><i class="fas fa-mail-bulk fa-1x"></i> signin</a></li>&nbsp;&nbsp;
+              <li class="nav-item"><a class="nav-link text-light btn btn-outline-danger" id="loin" href="{% url "Login" %}"><i class="fas fa-mail-bulk fa-1x"></i> Login</a></li>
+            </ul>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="navbar-brand justify-content-center text-danger rounded np-cirlce" href="#"><h4 style="padding: 0; margin: 0;">{{info.Email|slice:"1"}}</h4></a>
+          </div>
+        </div>
+      </nav>
+      </div>
+ 
+<div class="container-fluid" id="sig">   
+  <main class="form-signin">
+    <form method="POST" id="mysign" enctype="multipart/form-data">
+      {% csrf_token %}
+      <img class="mb-4" src="{% static "/vsgs/buck.svg" %}" alt="" width="87" height="67">
+      <h3 class="mb-3 text-primary np-list-element np-shadow-inverse">Please Login</h3>
+      <label for="inputEmail" class="visually-hidden">Email address</label>
+      {{form.Email}}
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      {{form.Password}}
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" class="mb-4" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <br>
+          <div class="d-flex justify-content-center mb-5">
+            <button class="np-btn np-circle-sm"><i class="fab fa-facebook fa-2x"></i></button>&nbsp;&nbsp;&nbsp;
+            <button class="np-btn np-circle-sm"><i class="fab fa-google fa-2x"></i></button>&nbsp;&nbsp;&nbsp;
+            <button class="np-btn np-circle-sm"><i class="fab fa-yahoo fa-2x"></i></button>
+          </div>
+          <p class="text-dark np-element">New User <a href="{% url "Sign" %}" class="text-primary"> Signin</a></p>
+    </form>
+  </main>
+</div>
+</header>
+
+
+
+
+
+    <script type="text/javascript" src="{% static "mdb/js/mdb.min.js" %}"></script>
+</body>
+</html>

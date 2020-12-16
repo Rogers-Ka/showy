@@ -17,7 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.views import generic
 
+from buck.views import *
+
 urlpatterns = [
-    path('', generic.TemplateView.as_view(template_name="index.html")),
+    path('hey', generic.TemplateView.as_view(template_name="index.html")),
+    path('', enter, name='enter'),
+    path('login', logger, name='Login'),
+    path('uploader', uploader, name='Upload'),
+    path('sign', signer, name='Sign'),
+    path('main', main, name='Buck'),
+    path('home', home, name='Home'),
+    path('about', contacts, name='Contacts'),
+    path('Intro', intro, name='Intro'),
     path("admin/", admin.site.urls),
 ]
